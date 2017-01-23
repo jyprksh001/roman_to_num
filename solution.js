@@ -19,7 +19,9 @@ function romanToNum(str) {
   for (var i = 0;i<=numbers.length;i++) {
     while (str.indexOf(roman[i]) === 0){
       result += numbers[i];
+      //console.log(result);
       str = str.replace(roman[i],'');
+      //console.log(str)
     }
   }
   return result;
