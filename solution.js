@@ -8,10 +8,8 @@ function numToRoman(num) {
       num -= numbers[i];
      }
   }
-
   return result;
 }
-
 function romanToNum(str) {  
   var result = 0;
   var numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
@@ -32,9 +30,14 @@ function arithmaticHandler(first,operator,last){
   first=romanToNum(first);
   last=romanToNum(last);
   //console.log(first);
-  result=eval(first+operator+last);
-  result=numToRoman(result);
+  if(last===0 && operator=='/'){
+    result='invalid input'
+  }else{
+     result=eval(first+operator+last);
+     result=numToRoman(result);
+  }
   return result;
+  }
 }
 
 console.log(arithmaticHandler('XL','+','X'));
